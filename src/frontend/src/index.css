@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   JARVIS AI ASSISTANT — "Arc Reactor" design system
+   Dark-first. Deep blue-black void, luminous cyan signal, restrained amber.
+   --------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.875rem;
+
+    /* Light mode — cool, crisp, high-contrast counterpart */
+    --background: 0.97 0.006 250;
+    --foreground: 0.19 0.02 260;
+    --card: 1.0 0.004 250;
+    --card-foreground: 0.19 0.02 260;
+    --popover: 1.0 0.004 250;
+    --popover-foreground: 0.19 0.02 260;
+
+    --primary: 0.52 0.13 200;
+    --primary-foreground: 0.99 0.005 200;
+
+    --secondary: 0.94 0.01 250;
+    --secondary-foreground: 0.28 0.02 260;
+    --muted: 0.94 0.01 250;
+    --muted-foreground: 0.5 0.015 260;
+
+    --accent: 0.62 0.12 85;
+    --accent-foreground: 0.2 0.03 85;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.99 0.005 25;
+    --success: 0.55 0.16 155;
+    --success-foreground: 0.99 0.005 155;
+    --warning: 0.7 0.15 85;
+    --warning-foreground: 0.2 0.03 85;
+
+    --border: 0.89 0.008 250;
+    --input: 0.89 0.008 250;
+    --ring: 0.52 0.13 200;
+
+    --chart-1: 0.62 0.13 200;
+    --chart-2: 0.6 0.12 165;
+    --chart-3: 0.68 0.13 85;
+    --chart-4: 0.55 0.16 280;
+    --chart-5: 0.6 0.18 25;
+
+    --sidebar: 0.955 0.008 250;
+    --sidebar-foreground: 0.19 0.02 260;
+    --sidebar-primary: 0.52 0.13 200;
+    --sidebar-primary-foreground: 0.99 0.005 200;
+    --sidebar-accent: 0.92 0.012 250;
+    --sidebar-accent-foreground: 0.28 0.02 260;
+    --sidebar-border: 0.89 0.008 250;
+    --sidebar-ring: 0.52 0.13 200;
+
+    /* Surface & depth primitives */
+    --glass: 1.0 0.004 250;
+    --glass-border: 0.5 0.02 250;
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.62 0.13 200) 0%,
+      oklch(0.55 0.14 225) 100%
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(1 0 0 / 0.06) 0%,
+      oklch(1 0 0 / 0.01) 100%
+    );
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Primary theme — deep blue-black void, tuned for glass layering */
+    --background: 0.145 0.018 262;
+    --foreground: 0.96 0.008 250;
+    --card: 0.205 0.022 262;
+    --card-foreground: 0.96 0.008 250;
+    --popover: 0.215 0.024 262;
+    --popover-foreground: 0.96 0.008 250;
+
+    /* Luminous cyan signal */
+    --primary: 0.79 0.135 195;
+    --primary-foreground: 0.15 0.02 200;
+
+    --secondary: 0.255 0.024 262;
+    --secondary-foreground: 0.9 0.008 250;
+    --muted: 0.255 0.024 262;
+    --muted-foreground: 0.65 0.014 255;
+
+    /* Restrained warm amber secondary */
+    --accent: 0.78 0.14 80;
+    --accent-foreground: 0.18 0.03 80;
+
+    --destructive: 0.66 0.19 25;
+    --destructive-foreground: 0.97 0.01 25;
+    --success: 0.72 0.16 155;
+    --success-foreground: 0.16 0.02 155;
+    --warning: 0.8 0.15 85;
+    --warning-foreground: 0.18 0.03 85;
+
+    --border: 0.31 0.022 262;
+    --input: 0.31 0.022 262;
+    --ring: 0.79 0.135 195;
+
+    --chart-1: 0.79 0.135 195;
+    --chart-2: 0.72 0.16 155;
+    --chart-3: 0.8 0.15 85;
+    --chart-4: 0.68 0.18 285;
+    --chart-5: 0.7 0.19 25;
+
+    --sidebar: 0.175 0.02 262;
+    --sidebar-foreground: 0.96 0.008 250;
+    --sidebar-primary: 0.79 0.135 195;
+    --sidebar-primary-foreground: 0.15 0.02 200;
+    --sidebar-accent: 0.255 0.024 262;
+    --sidebar-accent-foreground: 0.9 0.008 250;
+    --sidebar-border: 0.31 0.022 262;
+    --sidebar-ring: 0.79 0.135 195;
+
+    /* Surface & depth primitives */
+    --glass: 0.235 0.024 262;
+    --glass-border: 0.88 0.02 250;
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.83 0.135 195) 0%,
+      oklch(0.68 0.145 228) 100%
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(1 0 0 / 0.09) 0%,
+      oklch(1 0 0 / 0.02) 100%
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  html:not(.dark) {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: oklch(var(--primary) / 0.3);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Frosted glass surface — the signature material of the app */
+  .glass-panel {
+    background: oklch(var(--glass) / 0.55);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid oklch(var(--glass-border) / 0.14);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-panel-hover:hover {
+    background: oklch(var(--glass) / 0.68);
+    border-color: oklch(var(--glass-border) / 0.24);
+    transform: translateY(-2px);
+  }
+
+  .glass-panel-strong {
+    background: oklch(var(--glass) / 0.78);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid oklch(var(--glass-border) / 0.18);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Accessible focus ring — visible on keyboard nav only */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid oklch(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Ambient atmosphere — soft cyan glow behind the shell */
+  .ambient-glow {
+    position: relative;
+  }
+  .ambient-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        60% 50% at 15% 0%,
+        oklch(var(--primary) / 0.14) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        50% 45% at 100% 100%,
+        oklch(var(--accent) / 0.08) 0%,
+        transparent 70%
+      );
+  }
+
+  .scrollbar-slim {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 9999px;
+  }
+  .scrollbar-slim::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground) / 0.6);
+  }
+  .scrollbar-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-fade-in,
+    .animate-scale-in,
+    .animate-float-slow,
+    .animate-spin-slow,
+    .animate-pulse-dot,
+    .animate-bounce-dot,
+    .animate-shimmer {
+      animation: none !important;
+    }
+    .transition-smooth,
+    .glass-panel,
+    .glass-panel-hover:hover {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+}

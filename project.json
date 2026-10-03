@@ -1,0 +1,21 @@
+{
+  "overview": "A futuristic AI assistant dashboard with chat, voice input, text-to-speech, quick commands, and settings, built as a portfolio project.",
+  "features": [
+    "Chat with JARVIS using message bubbles, timestamps, and a thinking animation",
+    "Speak to JARVIS with the microphone and hear replies read aloud",
+    "Six quick commands for greetings, jokes, date, time, and help",
+    "Dark and light themes with glassmorphism styling",
+    "Customize the assistant name and voice response",
+    "Chat history saved in the browser and restored on reload",
+    "About section with portfolio description and technology badges"
+  ],
+  "category": "productivity",
+  "tags": [
+    "ai",
+    "assistant",
+    "portfolio",
+    "dashboard",
+    "voice"
+  ],
+  "last_updated": "2026-10-03T12:39:40.125Z"
+}
